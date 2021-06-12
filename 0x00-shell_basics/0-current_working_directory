@@ -1,2 +1,2 @@
 #!/bin/bash
-var=$(pwd); echo $var; \n
+echo $PWD \n
