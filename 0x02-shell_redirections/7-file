@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 echo Holberton School >  "\\*\\\\'\"Holberton School\"\\'\\\*\$\\?\\*\\*\\*\\*\\*:)"
+=======
+touch '\\*\\\\'\"Holberton School\"\\'\\\*\$\\?\\*\\*\\*\\*\\*:)'
+>>>>>>> 5125fde0f1a95a8fc5c583b77e9e30e4f4e80dc6
