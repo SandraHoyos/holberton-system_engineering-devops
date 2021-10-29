@@ -2,8 +2,8 @@
 #this is a fuc*** cool code
 
 i=0
-while [ $i -le 10 ]
+while [ $i -lt 10 ]
 do
 	echo "Best School"
-	((i=++))
+	((i++))
 done
