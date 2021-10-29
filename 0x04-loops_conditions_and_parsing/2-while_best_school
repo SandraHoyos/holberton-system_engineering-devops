@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #this is a fuc*** cool code
 
-i=0
-while [ $i -lt 10 ]
+con=0
+
+while [ $cont -lt 10 ]
 do
 	echo "Best School"
-	((i++))
+	(( con++ ))
 done
