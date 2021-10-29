@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#this is a fuc*** cool code
+
+i=1
+while [ $i -le 10 ]
+do
+	echo "Holberton School"
+	((i=i+1))
+done
