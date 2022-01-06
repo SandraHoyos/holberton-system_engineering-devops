@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Bash script that configures Nginx
-STRING="Hello World"
-apt-get -y update
-apt-get -y install nginx
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo service nginx starp
 ufw allow 'Nginx HTTP'
-echo "$STRING" > /var/www/html/index.nginx-debian.html
+echo "Hello World" > /etc/nginx/html/index.html
 service nginx restart
