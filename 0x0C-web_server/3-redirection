@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Bash script that configures Nginx
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo service nginx start
+REDIRECTION="server_name _;\n\trewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+
+apt update
+apt install -y nginx
 ufw allow 'Nginx HTTP'
-REDIRECT="\n\tlocation /redirect_me {\n\t\treturn 301 https://youtu.be/dQw4w9WgXcQ;\n\t}\n"
-FILE="/etc/nginx/sites-available/default"
-sed -i "server_name\ _;\ $REDIRECT" "$FILE"
+echo "Hello World" | sudo tee /var/www/html/index.html
+sed -i "s|server_name\ _;|$REDIRECTION|" /etc/nginx/sites-available/default
 service nginx restart
