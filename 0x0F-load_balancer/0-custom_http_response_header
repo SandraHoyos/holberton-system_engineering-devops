@@ -7,11 +7,14 @@ sudo apt-get -y install nginx
 sudo service nginx start
 
 REDIRECTION="server_name _;\n\trewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+newlines="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html\;\n\t\tinternal;\n\t}"
+newlines2="server_name _;\n\tadd_header X-Served-By $HOSTNAME;"
 echo "Hello World" | sudo tee /var/www/html/index.html
 sed -i "s|server_name\ _;|$REDIRECTION|" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
-newlines="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html\
-;\n\t\tinternal;\n\t}"
+
+
 sudo sed -i "27i $newlines" /etc/nginx/sites-available/default
+sed -i "s|server_name\ _;|newlines2|" /etc/nginx/sites-available/default
 sudo service nginx restart
 sudo service nginx reload4-not_found_page_404
