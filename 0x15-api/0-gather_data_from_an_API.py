@@ -2,7 +2,7 @@
 
 """
 Write a Python script that, using this REST API, for a given employee ID,
-returns information about his/her TODO list.
+returns information about his/her TODO list
 """
 
 import requests
@@ -22,4 +22,4 @@ if __name__ == '__main__':
             completed.append(task.get("title"))
     print("Employee {} is done with task({}/{}):"
           .format(user.get('name'), len(completed), len(todo)))
-     print("\n".join("\t {}".format(tasks) for tasks in done))
+    print("\n".join("\t {}".format(tasks) for tasks in done))
