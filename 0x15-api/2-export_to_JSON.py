@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Export data into the Json format"""
 
+import json
 import requests
 import sys
-import json
+
 
 if __name__ == '__main__':
     endpoint = "https://jsonplaceholder.typicode.com/"
