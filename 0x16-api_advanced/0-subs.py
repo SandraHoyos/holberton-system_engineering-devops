@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
     """
     function definition of getting number of subs
     """
-    url = "https://api.reddit.com/r/{}/about".format(subreddit)
+    url = "https://api.reddit.com/r/{}/about.json".format(subreddit)
     header = {'User-Agent': 'CustomClient/1.0'}
     req = requests.get(url, headers=header, allow_redirects=False)
     if req.status_code != 200:
