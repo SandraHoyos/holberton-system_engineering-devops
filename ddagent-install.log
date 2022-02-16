@@ -1,0 +1,124 @@
+[34m
+* Datadog Agent install script v1.7.1
+[0m
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Obj:1 https://dl.google.com/linux/chrome/deb stable InRelease
+Obj:2 http://ppa.launchpad.net/elementary-os/stable/ubuntu focal InRelease
+Obj:3 http://packages.microsoft.com/repos/code stable InRelease
+Des:4 http://mirrors.ubuntu.com/mirrors.txt Mirrorlist [75 B]
+Obj:7 http://ppa.launchpad.net/elementary-os/os-patches/ubuntu focal InRelease
+Obj:8 https://packages.microsoft.com/repos/vscode stable InRelease
+Obj:5 http://archive.ubuntu.com/ubuntu focal InRelease
+Des:6 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Des:11 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Ign:9 http://mirror.unimagdalena.edu.co/ubuntu focal-updates/main amd64 DEP-11 Metadata
+Ign:10 http://mirror.unimagdalena.edu.co/ubuntu focal-updates/universe amd64 DEP-11 Metadata
+Des:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [282 kB]
+Des:10 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [390 kB]
+Descargados 787 kB en 4s (200 kB/s)
+Leyendo lista de paquetes...
+Leyendo lista de paquetes...
+Creando árbol de dependencias...
+Leyendo la información de estado...
+curl ya está en su versión más reciente (7.68.0-1ubuntu2.7).
+gnupg ya está en su versión más reciente (2.2.19-3ubuntu2.1).
+fijado gnupg como instalado manualmente.
+apt-transport-https ya está en su versión más reciente (2.0.6).
+0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 13 no actualizados.
+[34m
+* Installing APT package sources for Datadog
+[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: keys.datadoghq.com
+Warning: Transient problem: timeout Will retry in 1 seconds. 5 retries left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: keys.datadoghq.com
+Warning: Transient problem: timeout Will retry in 2 seconds. 4 retries left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  17243      0 --:--:-- --:--:-- --:--:-- 17243
+gpg: creado el directorio '/root/.gnupg'
+gpg: /root/.gnupg/trustdb.gpg: se ha creado base de datos de confianza
+gpg: clave D3A80E30382E94DE: clave pública "Datadog, Inc <package@datadoghq.com>" importada
+gpg: Cantidad total procesada: 1
+gpg:               importadas: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  15565      0 --:--:-- --:--:-- --:--:-- 15565
+gpg: clave 32637D44F14F620E: clave pública "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" importada
+gpg: Cantidad total procesada: 1
+gpg:               importadas: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  22007      0 --:--:-- --:--:-- --:--:-- 21953
+gpg: clave D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" sin cambios
+gpg: Cantidad total procesada: 1
+gpg:              sin cambios: 1
+[34m
+* Installing the Datadog Agent package
+[0m
+Ign:1 https://apt.datadoghq.com stable InRelease
+Des:2 https://apt.datadoghq.com stable Release [9.927 B]
+Des:3 https://apt.datadoghq.com stable Release.gpg [801 B]
+Des:4 https://apt.datadoghq.com stable/7 amd64 Packages [17,6 kB]
+Des:5 https://apt.datadoghq.com stable/7 all Packages [736 B]
+Descargados 29,1 kB en 1s (33,3 kB/s)
+Leyendo lista de paquetes...
+  [33mInstalling package: datadog-agent
+[0m
+Leyendo lista de paquetes...
+Creando árbol de dependencias...
+Leyendo la información de estado...
+Se instalarán los siguientes paquetes NUEVOS:
+  datadog-agent datadog-signing-keys
+0 actualizados, 2 nuevos se instalarán, 0 para eliminar y 13 no actualizados.
+Se necesita descargar 242 MB de archivos.
+Se utilizarán 803 MB de espacio de disco adicional después de esta operación.
+Des:1 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.33.1-1 [242 MB]
+Des:2 https://apt.datadoghq.com stable/7 amd64 datadog-signing-keys all 1:1.0.1-1 [20,4 kB]
+debconf: no se pudo inicializar la interfaz: Dialog
+debconf: (Necesita una pantalla de al menos 13 líneas de alto y 31 columnas de ancho para la interfaz «dialog».)
+debconf: probando ahora la interfaz: Readline
+Descargados 242 MB en 1min 33s (2.596 kB/s)
+Seleccionando el paquete datadog-agent previamente no seleccionado.
+(Leyendo la base de datos ... (Leyendo la base de datos ... 5%(Leyendo la base de datos ... 10%(Leyendo la base de datos ... 15%(Leyendo la base de datos ... 20%(Leyendo la base de datos ... 25%(Leyendo la base de datos ... 30%(Leyendo la base de datos ... 35%(Leyendo la base de datos ... 40%(Leyendo la base de datos ... 45%(Leyendo la base de datos ... 50%(Leyendo la base de datos ... 55%(Leyendo la base de datos ... 60%(Leyendo la base de datos ... 65%(Leyendo la base de datos ... 70%(Leyendo la base de datos ... 75%(Leyendo la base de datos ... 80%(Leyendo la base de datos ... 85%(Leyendo la base de datos ... 90%(Leyendo la base de datos ... 95%(Leyendo la base de datos ... 100%(Leyendo la base de datos ... 135591 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../datadog-agent_1%3a7.33.1-1_amd64.deb ...
+Desempaquetando datadog-agent (1:7.33.1-1) ...
+Seleccionando el paquete datadog-signing-keys previamente no seleccionado.
+Preparando para desempaquetar .../datadog-signing-keys_1%3a1.0.1-1_all.deb ...
+Desempaquetando datadog-signing-keys (1:1.0.1-1) ...
+Configurando datadog-agent (1:7.33.1-1) ...
+Creating dd-agent group
+Creating dd-agent user
+Enabling service datadog-agent
+Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent.service → /lib/systemd/system/datadog-agent.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent-process.service → /lib/systemd/system/datadog-agent-process.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent-trace.service → /lib/systemd/system/datadog-agent-trace.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent-security.service → /lib/systemd/system/datadog-agent-security.service.
+No datadog.yaml file detected, not starting the agent
+Configurando datadog-signing-keys (1:1.0.1-1) ...
+Procesando disparadores para systemd (245.4-4ubuntu3.15) ...
+W: --force-yes está desactualizado, en su lugar utilice una de las opciones que empiezan por --allow.
+[34m
+* Adding your API key to the Agent configuration: /etc/datadog-agent/datadog.yaml
+[0m
+[34m
+* Setting SITE in the Agent configuration: /etc/datadog-agent/datadog.yaml
+[0m
+/usr/bin/systemctl
+[34m* Starting the Agent...
+[0m
+[32m
+
+Your Agent is running and functioning properly. It will continue to run in the
+background and submit metrics to Datadog.
+
+If you ever want to stop the Agent, run:
+
+    sudo systemctl stop datadog-agent
+
+And to run it again run:
+
+    sudo systemctl start datadog-agent
+
+[0m
